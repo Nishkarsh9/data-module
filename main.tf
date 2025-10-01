@@ -21,7 +21,7 @@ data "aws_route_tables" "all" {
   }
 }
 
-# Fetch Internet Gateways for each VPC (attached ones)
+# Fetch Internet Gateways for each VPC 
 data "aws_internet_gateway" "attached" {
   for_each = toset(data.aws_vpcs.all.ids)
 
